@@ -1,0 +1,569 @@
+/* Theme Variables meaning:
+--bg-color: Background color for the page
+--text-color: Default text color
+--container-bg: Background color for the container  
+--sidebar-bg: Background color for the sidebar
+--sidebar-text: Text color for the sidebar
+--link-color: Link color
+--accent-color: Accent color for headings and highlights
+--highlight-bg: Background color for highlights
+--border-color: Border color
+--photo-border: Border color for the photo
+--font-family: Font family for the page
+--letter-spacing: Letter spacing for text
+--image-filter: Image filter for photos
+*/
+
+:root {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --container-bg: #fff;
+  --sidebar-bg: #003366;
+  --sidebar-text: #fff;
+  --link-color: #99ccff;
+  --accent-color: #005ea2;
+  --highlight-bg: #e8f0fe;
+  --border-color: #ddd;
+  --photo-border: #99ccff;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --sidebar-heading: var(--sidebar-text); /* Default to sidebar text color */
+  --letter-spacing: normal; /* Default letter spacing */
+  --image-filter: none; /* Default image filter */
+}
+
+/* Theme classes */
+:root.theme-blue {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --container-bg: #fff;
+  --sidebar-bg: #003366;
+  --sidebar-text: #fff;
+  --link-color: #99ccff;
+  --accent-color: #005ea2;
+  --highlight-bg: #e8f0fe;
+  --border-color: #ddd;
+  --photo-border: #99ccff;
+  --sidebar-heading: #99ccff; /* A lighter shade of blue to balance between white text and blue background */
+  --letter-spacing: normal;
+  --image-filter: none;
+}
+
+:root.theme-green {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --container-bg: #fff;
+  --sidebar-bg: #104e28;
+  --sidebar-text: #fff;
+  --link-color: #a0e8af;
+  --accent-color: #198754;
+  --highlight-bg: #e9f7ef;
+  --border-color: #ddd;
+  --photo-border: #a0e8af;
+  --sidebar-heading: #a0e8af; /* A lighter shade of green to balance between white text and green background */
+  --letter-spacing: normal;
+  --image-filter: sepia(0.6) contrast(1.2) brightness(0.9); /* Add an old photo film effect */
+}
+
+:root.theme-matrix {
+  --bg-color: #000;
+  --text-color: #009900; /* #00ff00; */
+  --container-bg: #0a0a0a;
+  --sidebar-bg: #001100;
+  --sidebar-text: #009900;
+  --link-color: #33ff33;
+  --accent-color: #00ff00;
+  --highlight-bg: #002200;
+  --border-color: #00ff00;
+  --photo-border: #33ff33;
+  --sidebar-heading: #00ff00; /* A darker shade of green to balance between white text and green background */
+  --letter-spacing: normal;
+  --image-filter: brightness(0.7) hue-rotate(30deg); /* Subtle adjustments for closer-to-original colors */
+}
+
+:root.theme-dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --container-bg: #1e1e1e;
+  --sidebar-bg: #2d2d2d;
+  --sidebar-text: #e0e0e0;
+  --link-color: #bb86fc;
+  --accent-color: #bb86fc;
+  --highlight-bg: #2d2d2d;
+  --border-color: #333;
+  --photo-border: #bb86fc;
+  --letter-spacing: normal;
+  --image-filter: brightness(0.7) contrast(1.1); /* Darker with higher contrast */
+}
+
+:root.theme-cyberpunk {
+  --bg-color: #0a0a1a;
+  --text-color: #00ff9d;
+  --container-bg: #0f0f2a;
+  --sidebar-bg: #1a1a3a;
+  --sidebar-text: #00ff9d;
+  --link-color: #ff00ff;
+  --accent-color: #ff00ff;
+  --highlight-bg: #1a1a3a;
+  --border-color: #ff00ff;
+  --photo-border: #ff00ff;
+  --letter-spacing: 2px; /* Set ter spacing to 2px for neon theme */
+  --image-filter: hue-rotate(20deg) brightness(1.2); /* Neon-like effect */
+}
+
+/* Font classes */
+:root.font-default {
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root.font-matrix {
+  --font-family: "Share Tech Mono", monospace;
+}
+
+:root.font-cyberpunk {
+  --font-family: "Orbitron", sans-serif;
+}
+
+/* Base styles */
+body {
+  letter-spacing: var(--letter-spacing); /* Use the themed variable */
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Floating theme selector */
+.style-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--container-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.style-selector.collapsed {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  background: var(--container-bg);
+  border: 2px solid var(--accent-color);
+  border-radius: 50px;
+}
+
+.style-selector.expanded {
+  width: auto;
+  height: auto;
+  padding: 12px;
+  background: var(--container-bg);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+}
+
+.style-selector:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.theme-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.style-selector.expanded .theme-icon {
+  transform: rotate(45deg);
+}
+
+.theme-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--accent-color);
+}
+
+.theme-options {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.style-selector.expanded .theme-options {
+  display: flex;
+}
+
+.theme-option {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-color);
+}
+
+.theme-option:hover {
+  background: var(--highlight-bg);
+}
+
+.theme-option.active {
+  background: var(--text-color);
+  color: var(--container-bg);
+}
+
+/* Matrix theme specific styles */
+.theme-matrix .theme-option.active {
+  background: var(--accent-color);
+  color: var(--container-bg);
+}
+
+/* Hide in print mode */
+@media print {
+  .style-selector {
+    display: none;
+  }
+}
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: var(--container-bg);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sidebar {
+  width: 30%;
+  padding: 20px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+.sidebar h2,
+.sidebar h3 {
+  margin-top: 0;
+  color: var(--sidebar-heading); /* Use the new variable for heading color */
+}
+.sidebar a {
+  color: var(--link-color);
+  text-decoration: none;
+  word-break: break-all;
+}
+.content {
+  width: 70%;
+  padding: 30px;
+  background: var(--container-bg);
+  color: var(--text-color);
+}
+
+/* Experience Section Styling */
+.job-entry {
+  margin-bottom: 25px; /* Add more space between job entries */
+  padding-left: 15px;
+  border-left: 3px solid var(--accent-color); /* Add a visual indicator */
+}
+
+.job-entry h3 {
+  margin-top: 0;
+  margin-bottom: 5px; /* Reduce space below the job title */
+  color: var(--accent-color); /* Match heading color */
+}
+
+.job-meta {
+  margin-bottom: 10px; /* Space between meta info and bullet points */
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.8; /* Slightly fade the meta info */
+}
+
+.job-meta .company {
+  font-weight: bold;
+}
+
+.job-meta .dates {
+  font-style: italic;
+  margin-left: 5px;
+}
+
+.job-meta .location {
+  display: block; /* Put location on a new line */
+  margin-top: 3px;
+}
+
+.job-entry ul {
+  margin-top: 10px; /* Space above bullet points */
+  padding-left: 20px; /* Indent bullet points */
+}
+
+.job-entry li {
+  margin-bottom: 5px; /* Space between bullet points */
+}
+
+h1 {
+  color: var(--accent-color);
+  margin-top: 0;
+}
+h2 {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  margin-top: 30px;
+}
+ul {
+  padding-left: 20px;
+}
+.highlight {
+  background: var(--highlight-bg);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px;
+  margin-bottom: 20px;
+  letter-spacing: var(--letter-spacing); /* Use the themed variable */
+}
+.section {
+  margin-bottom: 20px;
+}
+.photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--photo-border);
+  margin: 0 auto;
+  display: block;
+  filter: var(--image-filter); /* Apply the themed image filter */
+}
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.sidebar p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar,
+  .content {
+    width: 100%;
+  }
+}
+
+@media print {
+  /* Hide non-printable elements */
+  .style-selector,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Base print styles */
+  body,
+  body * {
+    background: white !important;
+    color: #444 !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  /* Container styles */
+  .container,
+  .container * {
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Text colors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  h1 *,
+  h2 *,
+  h3 *,
+  h4 *,
+  h5 *,
+  h6 * {
+    color: #111 !important;
+    text-decoration: none !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  /* Links */
+  a,
+  a * {
+    color: #111 !important;
+    /* text-decoration: none !important; */
+    font-family: Arial, sans-serif !important;
+  }
+
+  /* Links with URLs */
+  a[href^="http"]::after {
+    content: ": " attr(href) "";
+    font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* Specific styling for social links */
+  .social-links a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    color: #666;
+    display: inline-block;
+    margin-left: 0.5em;
+  }
+
+  /* Ensure proper spacing for links */
+  a {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  /* Profile section */
+  .profile-section,
+  .profile-section * {
+    border-right: none !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Photo container */
+  .photo-container,
+  .photo-container * {
+    border: none !important;
+  }
+
+  /* Experience blocks */
+  .experience-item,
+  .experience-item * {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .experience-header,
+  .experience-header * {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .experience-title,
+  .experience-title * {
+    font-weight: bold !important;
+    color: #111 !important;
+  }
+
+  .experience-date,
+  .experience-date * {
+    color: #666 !important;
+    font-size: 0.9em !important;
+  }
+
+  .experience-company,
+  .experience-company * {
+    font-style: italic !important;
+    color: #555 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .experience-description,
+  .experience-description * {
+    color: #444 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Section dividers */
+  .section-divider,
+  .section-divider * {
+    border-bottom: none !important;
+    width: 90% !important;
+    margin: 1rem auto !important;
+  }
+
+  /* Sidebar */
+  .sidebar,
+  .sidebar * {
+    background: white !important;
+    border-right: none !important;
+  }
+
+  /* Content area */
+  .content,
+  .content * {
+    background: white !important;
+  }
+
+  /* Code blocks */
+  pre,
+  code,
+  pre *,
+  code * {
+    background: #f5f5f5 !important;
+    border: none !important;
+    color: #111 !important;
+    font-family: "Courier New", monospace !important;
+  }
+
+  /* Tables */
+  table,
+  table * {
+    border: none !important;
+  }
+
+  th,
+  td,
+  th *,
+  td * {
+    border: none !important;
+  }
+
+  /* Lists */
+  ul,
+  ol,
+  ul *,
+  ol * {
+    color: #444 !important;
+    margin-left: 1.5rem !important;
+  }
+
+  /* Ensure proper page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Prevent orphaned headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  /* Ensure proper spacing */
+  * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
