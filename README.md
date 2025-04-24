@@ -1,8 +1,8 @@
 # Volodymyr Pasichnyk
 
-<p align="center">
+<div align="center">
   <img src="https://avatars.githubusercontent.com/pasechnik" width="150" height="150" alt="Volodymyr Pasichnyk" style="border-radius: 50%;">
-</p>
+</div>
 
 ## Principal Software Engineer
 
