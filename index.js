@@ -26,6 +26,10 @@ function updateThemeSelector(theme) {
     if (selector && selector.value !== theme) {
       selector.value = theme;
     }
+    const trigger = document.querySelector('.theme-selector-trigger');
+    if (trigger) {
+      trigger.dataset.theme = theme;
+    }
   } catch (error) {
     console.warn('Error updating theme selector:', error);
   }

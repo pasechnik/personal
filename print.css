@@ -16,7 +16,7 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   .print-btn {
     display: none !important;
   }
@@ -190,8 +190,25 @@
     background: var(--highlight-bg) !important;
   }
 
-  h1, h2, h3 { break-after: avoid; break-inside: avoid; }
-  .section, .job-entry, #highlights, .job-entry ul, .job-entry li { break-inside: avoid; }
+  :root.theme-green .highlight {
+    background: var(--highlight-bg) !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+  .section,
+  .job-entry,
+  #highlights,
+  .job-entry ul,
+  .job-entry li {
+    break-inside: avoid;
+  }
   /* Give main column a touch more room if needed */
-  .container { grid-template-columns: 32% 68%; }
+  .container {
+    grid-template-columns: 32% 68%;
+  }
 }
