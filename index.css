@@ -31,6 +31,40 @@
   --image-filter: none; /* Default image filter */
 }
 
+/* Dark theme */
+:root.theme-dark {
+  --bg-color: #0f1720;
+  --text-color: #e6eef8;
+  --container-bg: #0b1220;
+  --sidebar-bg: #0a0f16;
+  --sidebar-text: #e6eef8;
+  --link-color: #7fb3ff;
+  --accent-color: #4da3ff;
+  --highlight-bg: #122032;
+  --border-color: #1e2a3a;
+  --photo-border: #7fb3ff;
+  --sidebar-heading: var(--sidebar-text);
+  --letter-spacing: normal;
+  --image-filter: none;
+}
+
+/* Matrix theme (green-on-black) */
+:root.theme-matrix {
+  --bg-color: #00110a;
+  --text-color: #a8ff7a;
+  --container-bg: #02120b;
+  --sidebar-bg: #00120a;
+  --sidebar-text: #a8ff7a;
+  --link-color: #00ff7a;
+  --accent-color: #00ff66;
+  --highlight-bg: #02220f;
+  --border-color: #003822;
+  --photo-border: #00ff66;
+  --sidebar-heading: #a8ff7a;
+  --letter-spacing: 1px;
+  --image-filter: contrast(1.05) saturate(1.1);
+}
+
 /* Theme classes */
 :root.theme-blue {
   --bg-color: #f4f6f9;
@@ -49,50 +83,18 @@
 }
 
 :root.theme-green {
-  --bg-color: #f4f6f9;
-  --text-color: #333;
-  --container-bg: #fff;
-  --sidebar-bg: #104e28;
-  --sidebar-text: #fff;
-  --link-color: #a0e8af;
-  --accent-color: #198754;
-  --highlight-bg: #e9f7ef;
-  --border-color: #ddd;
-  --photo-border: #a0e8af;
-  --sidebar-heading: #a0e8af; /* A lighter shade of green to balance between white text and green background */
+  --bg-color: #f3fbf6; /* light, slightly green-tinted page background */
+  --text-color: #113322; /* dark green text for contrast */
+  --container-bg: #ffffff; /* keep container white for readability */
+  --sidebar-bg: #0f3d2e; /* deep green sidebar */
+  --sidebar-text: #e9fbf2; /* pale text on dark sidebar */
+  --link-color: #1fa86a; /* fresh green links */
+  --accent-color: #1fa86a; /* accent matches links */
+  --highlight-bg: #eaf9ef; /* very light green highlight */
+  --border-color: #cfefe0;
+  --photo-border: #1fa86a;
   --letter-spacing: normal;
-  --image-filter: sepia(0.6) contrast(1.2) brightness(0.9); /* Add an old photo film effect */
-}
-
-:root.theme-matrix {
-  --bg-color: #000;
-  --text-color: #009900; /* #00ff00; */
-  --container-bg: #0a0a0a;
-  --sidebar-bg: #001100;
-  --sidebar-text: #009900;
-  --link-color: #33ff33;
-  --accent-color: #00ff00;
-  --highlight-bg: #002200;
-  --border-color: #00ff00;
-  --photo-border: #33ff33;
-  --sidebar-heading: #00ff00; /* A darker shade of green to balance between white text and green background */
-  --letter-spacing: normal;
-  --image-filter: brightness(0.7) hue-rotate(30deg); /* Subtle adjustments for closer-to-original colors */
-}
-
-:root.theme-dark {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --container-bg: #1e1e1e;
-  --sidebar-bg: #2d2d2d;
-  --sidebar-text: #e0e0e0;
-  --link-color: #bb86fc;
-  --accent-color: #bb86fc;
-  --highlight-bg: #2d2d2d;
-  --border-color: #333;
-  --photo-border: #bb86fc;
-  --letter-spacing: normal;
-  --image-filter: brightness(0.7) contrast(1.1); /* Darker with higher contrast */
+  --image-filter: none;
 }
 
 :root.theme-cyberpunk {
@@ -157,6 +159,18 @@ body {
   background: var(--container-bg);
   border: 2px solid var(--accent-color);
   border-radius: 50px;
+}
+
+/* Print header (visible only in print) */
+.print-header {
+  display: none;
+}
+.print-header h1 {
+  margin: 0 0 2mm 0;
+}
+.print-tagline {
+  font-size: 11pt;
+  color: #555;
 }
 
 .style-selector.expanded {
@@ -227,10 +241,149 @@ body {
   color: var(--container-bg);
 }
 
+/* ---------- RICH PDF PRINT THEME ---------- */
+@page {
+  size: A4;
+  margin: 14mm 12mm; /* slightly more breathing room */
+}
+
+@media print {
+  /* Colors and backgrounds in PDF */
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: var(--bg-color) !important;
+    color: #222 !important; /* более контрастный, но не «чёрный как смоль» */
+    font-size: 11.5pt; /* +чуть крупнее текста */
+    line-height: 1.35; /* +интерлиньяж */
+  }
+
+  /* Globally more 'breathing room' between sections */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    color: var(--accent-color) !important;
+  }
+  h1 {
+    font-size: 20pt;
+    margin-bottom: 8pt;
+  }
+  h2 {
+    font-size: 14pt;
+    margin: 14pt 0 6pt;
+    border: 0;
+  }
+  h3 {
+    font-size: 12.5pt;
+    margin: 10pt 0 4pt;
+  }
+  p,
+  li {
+    font-size: 11.5pt;
+  }
+
+  /* Print grid: tidy column + sidebar */
+  .container {
+    display: grid !important;
+    grid-template-columns: 34% 66%;
+    gap: 0;
+    background: var(--container-bg) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    position: relative;
+  }
+
+  /* Accent stripe on the left (full page height) */
+  .container::before {
+    content: '';
+    position: fixed; /* важно: тянется на всю страницу */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6mm;
+    background: var(--accent-color);
+  }
+
+  /* Keep the sidebar colored and readable */
+  .sidebar {
+    background: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+    padding: 14mm 8mm 10mm 10mm !important; /* выравнивание с полями страницы */
+    border-right: 0;
+  }
+  .sidebar a {
+    color: var(--link-color) !important;
+  }
+  .photo {
+    border-color: var(--photo-border) !important;
+  }
+
+  /* Right content — more spacious */
+  .content {
+    background: var(--container-bg) !important;
+    color: #222 !important;
+    padding: 14mm 10mm 10mm 10mm !important;
+  }
+
+  /* Profile highlight block in PDF — with a soft background */
+  .highlight {
+    background: color-mix(in srgb, var(--highlight-bg) 85%, white) !important;
+    border-left: 4px solid var(--accent-color) !important;
+    padding: 10pt 12pt !important;
+    box-shadow: none !important;
+  }
+
+  /* Experience list breathes and looks structured */
+  .job-entry {
+    border-left: 3px solid var(--accent-color) !important;
+    padding-left: 10pt !important;
+    margin-bottom: 12pt !important;
+  }
+  .job-meta {
+    opacity: 0.95 !important;
+  }
+  .job-entry li {
+    margin-bottom: 4pt !important;
+  }
+
+  /* Subtle line at the bottom of the page (footer) */
+  .footer {
+    margin-top: 10pt;
+    padding-top: 6pt;
+    border-top: 2px solid var(--accent-color);
+    text-align: center !important;
+  }
+  .footer .footer-text {
+    font-size: 8pt !important;
+    color: #666 !important;
+  }
+
+  /* Minor improvements */
+  a[href^='http']::after {
+    content: '' !important;
+  } /* remove URL tails */
+  .style-selector,
+  .print-hide {
+    display: none !important;
+  } /* don't print UI elements */
+}
+
 /* Hide in print mode */
 @media print {
   .style-selector {
     display: none;
+  }
+}
+
+@media print {
+  .print-header {
+    position: relative;
+    grid-column: 1 / -1; /* на ширину всей сетки */
+    margin: -6mm 0 6mm 8mm; /* лёгкий «вынос» вправо от акцент-полосы */
+    padding: 0 0 6mm 0;
+    border-bottom: 1.5pt solid var(--border-color);
   }
 }
 
@@ -394,6 +547,12 @@ ul {
   .style-selector,
   .print-hide {
     display: none !important;
+  }
+
+  /* Show print header only in print */
+  .print-header {
+    display: block !important;
+    margin-bottom: 12px;
   }
 
   /* Base print styles */

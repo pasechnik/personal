@@ -31,12 +31,12 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
     />
-    <script src="index.js"></script>
+  <script src="index.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -89,12 +89,20 @@
       </div>
     </div>
     <div class="container">
+      <div class="print-header print-hide-off">
+        <h1>Volodymyr Pasichnyk</h1>
+        <div class="print-tagline">
+          Principal Software Engineer • Architecting data-driven financial
+          platforms — React · FastAPI · AWS · TypeScript
+        </div>
+      </div>
       <div class="sidebar">
         <div class="photo-container">
           <img
             src="https://avatars.githubusercontent.com/pasechnik"
             alt="Volodymyr Pasichnyk"
             class="photo"
+            loading="lazy"
           />
         </div>
         <h2>Volodymyr Pasichnyk</h2>
