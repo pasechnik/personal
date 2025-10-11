@@ -16,11 +16,15 @@
     margin: 0 !important;
     padding: 0 !important;
   }
+  
+  .print-btn {
+    display: none !important;
+  }
 
   /* Two-column layout (forces white background in print) */
   .container {
     display: grid !important;
-    grid-template-columns: 32% 68% !important;
+    grid-template-columns: 35% 65% !important;
     background: #fff !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -34,14 +38,21 @@
   .sidebar {
     background: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
-    padding: 14mm 9mm 10mm 4mm !important;
+    padding: 16mm 10mm 12mm 6mm !important; /* Increase padding for better spacing */
     border-right: 0 !important;
     width: auto !important;
     grid-column: 1;
+    break-inside: avoid !important; /* Prevent sidebar content from breaking inside */
+    page-break-inside: avoid !important; /* Avoid page breaks within the sidebar */
+    word-wrap: break-word !important; /* Ensure long words wrap properly */
   }
   .sidebar h2,
   .sidebar h3 {
     color: var(--sidebar-heading) !important;
+    break-after: avoid !important; /* Prevent headings from breaking */
+  }
+  .sidebar p {
+    break-after: avoid !important; /* Prevent paragraphs from breaking */
   }
   .sidebar a {
     color: var(--link-color) !important;
@@ -93,6 +104,7 @@
     border-left: 4px solid var(--accent-color) !important;
     padding: 10pt 6pt !important;
     box-shadow: none !important;
+    margin-bottom: 0 !important; /* Reduce gap between Profile and Experience */
   }
 
   /* Job entries */
@@ -134,6 +146,12 @@
     color: #666 !important;
   }
 
+  .print-only {
+    display: inline !important;
+    color: #fff !important;
+    font-weight: 400 !important;
+  }
+
   /* Hide URLs and UI elements */
   a[href^='http']::after {
     content: '' !important;
@@ -142,4 +160,10 @@
   .print-hide {
     display: none !important;
   }
+
+  h1, h2, h3 { break-after: avoid; break-inside: avoid; }
+  .section, .job-entry, .profile-summary, #experience, #highlights,
+  .job-entry ul, .job-entry li { break-inside: avoid; }
+  /* Give main column a touch more room if needed */
+  .container { grid-template-columns: 32% 68%; }
 }

@@ -145,6 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (initialOption) {
     initialOption.classList.add('active');
   }
+
+  const printButton = document.querySelector('.print-btn');
+  if (printButton) {
+    printButton.addEventListener('click', () => {
+      window.print();
+    });
+  }
 });
 
 try {

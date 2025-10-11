@@ -183,6 +183,10 @@ body {
   color: #555;
 }
 
+.print-only {
+  display: none;
+}
+
 .style-selector.expanded {
   width: auto;
   height: auto;
@@ -251,6 +255,13 @@ body {
   color: var(--container-bg);
 }
 
+.print-btn {
+  position: fixed; right: 16px; bottom: 16px; z-index: 1001;
+  border: 0; border-radius: 999px; padding: 10px 14px;
+  background: var(--accent-color); color: #fff; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
 .container {
   display: -webkit-flex;
   display: flex;
@@ -263,7 +274,7 @@ body {
   overflow: hidden;
 }
 .sidebar {
-  width: 30%;
+  width: 33%;
   padding: 20px;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
