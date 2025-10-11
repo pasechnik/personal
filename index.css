@@ -387,7 +387,12 @@ ul {
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* Footer styles */
+/* Tagline specific styling */
+.sidebar .tagline {
+  margin-top: -2px;
+  display: block;
+  opacity: 0.95;
+}
 .footer {
   text-align: center;
   padding: 20px 0;
