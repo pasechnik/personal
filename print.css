@@ -56,6 +56,7 @@
   }
   .sidebar a {
     color: var(--link-color) !important;
+    word-break: normal !important; /* Prevent email wrapping */
   }
   .photo {
     border-color: var(--photo-border) !important;
@@ -105,6 +106,7 @@
     padding: 10pt 6pt !important;
     box-shadow: none !important;
     margin-bottom: 0 !important; /* Reduce gap between Profile and Experience */
+    break-after: avoid !important; /* Prevent break after Profile block */
   }
 
   /* Job entries */
@@ -162,8 +164,7 @@
   }
 
   h1, h2, h3 { break-after: avoid; break-inside: avoid; }
-  .section, .job-entry, .profile-summary, #experience, #highlights,
-  .job-entry ul, .job-entry li { break-inside: avoid; }
+  .section, .job-entry, #highlights, .job-entry ul, .job-entry li { break-inside: avoid; }
   /* Give main column a touch more room if needed */
   .container { grid-template-columns: 32% 68%; }
 }
