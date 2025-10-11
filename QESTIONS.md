@@ -8,14 +8,14 @@ It is combination of JS function with references to all accessible variables fro
 // two global variables: scale and mainDiv
 const scale = 10;
 // create div
-const mainDiv = document.createElement("div");
-mainDiv.id = "main-div";
-mainDiv.style.width = "1";
-mainDiv.style.height = "1";
-mainDiv.style.position = "absolute";
-mainDiv.style.backgroundColor = "rgba(0,0,200,0.5)";
-mainDiv.style.left = "0";
-mainDiv.style.top = "0";
+const mainDiv = document.createElement('div');
+mainDiv.id = 'main-div';
+mainDiv.style.width = '1';
+mainDiv.style.height = '1';
+mainDiv.style.position = 'absolute';
+mainDiv.style.backgroundColor = 'rgba(0,0,200,0.5)';
+mainDiv.style.left = '0';
+mainDiv.style.top = '0';
 // add div to a page
 document.body.appendChild(mainDiv);
 
@@ -44,9 +44,9 @@ size10();
 // creating 3 different buttons with their own onClick functions
 for (let i = 0; i < 3; i++) {
   // add a button
-  const button = document.createElement("button");
+  const button = document.createElement('button');
   button.innerText = `set font size to ${i + scale} px`;
-  button.addEventListener("click", sizer(scale * 10));
+  button.addEventListener('click', sizer(scale * 10));
   document.body.appendChild(button);
 }
 ```
@@ -61,7 +61,7 @@ Some possible reasons:
 
 ```javascript
 function foo(arg) {
-  bar = "this is a hidden global variable";
+  bar = 'this is a hidden global variable';
 }
 ```
 
@@ -69,16 +69,16 @@ function foo(arg) {
 
 ```javascript
 // create button and add event listener and append it to body
-const button = document.createElement("button");
-button.innerText = "Click me";
-button.addEventListener("click", () => {
-  console.log("clicked");
+const button = document.createElement('button');
+button.innerText = 'Click me';
+button.addEventListener('click', () => {
+  console.log('clicked');
 });
 document.body.appendChild(button);
 
 // let's remove event listener in order to avoid memory leaks
-button.removeEventListener("click", () => {
-  console.log("removed");
+button.removeEventListener('click', () => {
+  console.log('removed');
 });
 
 // now do removal of the button from the DOM
@@ -92,10 +92,10 @@ var theThing = null;
 var replaceThing = function () {
   var originalThing = theThing;
   var unused = function () {
-    if (originalThing) console.log("hi");
+    if (originalThing) console.log('hi');
   };
   theThing = {
-    longStr: new Array(1000000).join("*"),
+    longStr: new Array(1000000).join('*'),
     someMethod: function () {
       console.log(someMessage);
     },
@@ -109,9 +109,9 @@ setInterval(replaceThing, 1000);
 ```javascript
 // create dom elements: button, image and text
 const block = {
-  button: document.createElement("button"),
-  image: document.createElement("img"),
-  text: document.createElement("p"),
+  button: document.createElement('button'),
+  image: document.createElement('img'),
+  text: document.createElement('p'),
 };
 
 // add elements to DOM
@@ -120,10 +120,10 @@ document.body.appendChild(block.image);
 document.body.appendChild(block.text);
 
 function changeBlock() {
-  block.button.textContent = "Click me!";
-  block.image.src = "https://source.unsplash.com/random/400x200";
+  block.button.textContent = 'Click me!';
+  block.image.src = 'https://source.unsplash.com/random/400x200';
   block.text.textContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 }
 
 // now let's remove elements from DOM

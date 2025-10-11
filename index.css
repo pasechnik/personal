@@ -25,7 +25,7 @@
   --highlight-bg: #e8f0fe;
   --border-color: #ddd;
   --photo-border: #99ccff;
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --sidebar-heading: var(--sidebar-text); /* Default to sidebar text color */
   --letter-spacing: normal; /* Default letter spacing */
   --image-filter: none; /* Default image filter */
@@ -106,21 +106,21 @@
   --highlight-bg: #1a1a3a;
   --border-color: #ff00ff;
   --photo-border: #ff00ff;
-  --letter-spacing: 2px; /* Set ter spacing to 2px for neon theme */
+  --letter-spacing: 2px; /* letter spacing to 2px for neon theme */
   --image-filter: hue-rotate(20deg) brightness(1.2); /* Neon-like effect */
 }
 
 /* Font classes */
 :root.font-default {
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root.font-matrix {
-  --font-family: "Share Tech Mono", monospace;
+  --font-family: 'Share Tech Mono', monospace;
 }
 
 :root.font-cyberpunk {
-  --font-family: "Orbitron", sans-serif;
+  --font-family: 'Orbitron', sans-serif;
 }
 
 /* Base styles */
@@ -131,6 +131,7 @@ body {
   padding: 0;
   background: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh; /* Test change */
 }
 
 /* Floating theme selector */
@@ -326,9 +327,12 @@ ul {
 .highlight {
   background: var(--highlight-bg);
   border-left: 4px solid var(--accent-color);
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 20px;
-  letter-spacing: var(--letter-spacing); /* Use the themed variable */
+  letter-spacing: var(--letter-spacing);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 .section {
   margin-bottom: 20px;
@@ -354,6 +358,26 @@ ul {
 .sidebar p {
   margin-top: 0;
   margin-bottom: 10px;
+}
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--text-color);
+}
+.footer .footer-text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.45); /* lighter on light themes */
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Ensure footer is subtle in dark/matrix themes */
+.theme-dark .footer .footer-text,
+.theme-matrix .footer .footer-text,
+.theme-cyberpunk .footer .footer-text {
+  color: rgba(255, 255, 255, 0.45);
 }
 @media (max-width: 768px) {
   .container {
@@ -415,8 +439,8 @@ ul {
   }
 
   /* Links with URLs */
-  a[href^="http"]::after {
-    content: ": " attr(href) "";
+  a[href^='http']::after {
+    content: ': ' attr(href) '';
     font-size: 0.9em;
     color: #333;
     text-decoration: none;
@@ -424,7 +448,7 @@ ul {
 
   /* Specific styling for social links */
   .social-links a::after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
     font-size: 0.9em;
     color: #666;
     display: inline-block;
@@ -521,7 +545,7 @@ ul {
     background: #f5f5f5 !important;
     border: none !important;
     color: #111 !important;
-    font-family: "Courier New", monospace !important;
+    font-family: 'Courier New', monospace !important;
   }
 
   /* Tables */
@@ -559,6 +583,14 @@ ul {
   h5,
   h6 {
     page-break-after: avoid;
+  }
+
+  .footer {
+    text-align: center !important;
+  }
+  .footer .footer-text {
+    font-size: 0.2em !important;
+    color: #666 !important;
   }
 
   /* Ensure proper spacing */
