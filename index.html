@@ -31,12 +31,13 @@
       rel="stylesheet"
     />
 
-  <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="print.css" media="print" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
     />
-  <script src="index.js" defer></script>
+    <script src="index.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -64,7 +65,8 @@
     </script>
   </head>
   <body>
-    <div
+    <a href="#main" class="sr-only">Skip to main content</a>
+    <nav
       class="style-selector collapsed"
       role="region"
       aria-label="Theme selector"
@@ -87,7 +89,7 @@
         <div class="theme-option" data-theme="dark">Dark Mode</div>
         <div class="theme-option" data-theme="cyberpunk">Neon Cyberpunk</div>
       </div>
-    </div>
+    </nav>
     <div class="container">
       <div class="print-header print-hide-off">
         <h1>Volodymyr Pasichnyk</h1>
@@ -96,7 +98,7 @@
           platforms — React · FastAPI · AWS · TypeScript
         </div>
       </div>
-      <div class="sidebar">
+      <aside class="sidebar">
         <div class="photo-container">
           <img
             src="https://avatars.githubusercontent.com/pasechnik"
@@ -106,7 +108,7 @@
           />
         </div>
         <h2>Volodymyr Pasichnyk</h2>
-        <p>Principal Software Engineer</p>
+        <p><strong>Principal Software Engineer</strong></p>
         <p class="tagline">
           Architecting data-driven financial platforms — React · FastAPI · AWS ·
           TypeScript
@@ -147,9 +149,9 @@
           <li>M.A. in Applied Math, 1997</li>
           <li>Dnipropetrovsk National University, Ukraine</li>
         </ul>
-      </div>
+      </aside>
 
-      <div class="content">
+      <main class="content" id="main">
         <h1>Profile</h1>
         <div class="profile-summary highlight">
           <p>
@@ -165,7 +167,8 @@
 
           <p>
             Currently leading engineering initiatives at
-            <strong>Luxoft UK / Capital Group</strong>, focusing on
+            <strong>(Luxoft UK)'s client: top-tier asset manager</strong>,
+            focusing on
             <strong>data pipelines, analytics transformations,</strong> and
             <strong>AI-enhanced financial insights</strong>.
           </p>
@@ -176,151 +179,157 @@
           </p>
         </div>
 
-        <h2>Experience</h2>
+        <section id="experience">
+          <h2>Experience</h2>
 
-        <div class="section job-entry">
-          <h3>Principal Software Developer</h3>
-          <div class="job-meta">
-            <span class="company">Luxoft UK</span> |
-            <span class="dates">Apr 2024 – Present</span><br />
-            <span class="location"
-              >London, United Kingdom of Great Britain</span
-            >
-          </div>
+          <article class="section job-entry">
+            <h3>Principal Software Developer</h3>
+            <div class="job-meta">
+              <span class="company">Luxoft UK</span> |
+              <span class="dates">Apr 2024 – Present</span><br />
+              <span class="location"
+                >London, United Kingdom of Great Britain</span
+              >
+            </div>
+            <ul>
+              <li>
+                Led the modernization and UI redesign of a financial analytics
+                platform for portfolio managers and risk analysts.
+              </li>
+              <li>
+                Integrated <strong>FastAPI</strong> backend with
+                <strong>data pipelines</strong> for portfolio analytics and
+                exposure modeling.
+              </li>
+              <li>
+                Integrated multiple financial data sources and automated data
+                transformation workflows using modern cloud tools.
+              </li>
+              <li>
+                Implemented <strong>observability and monitoring</strong> with
+                Prometheus, Grafana, and ELK.
+              </li>
+              <li>
+                Mentored engineers, set technical OKRs, and drove architectural
+                scalability across the platform.
+              </li>
+            </ul>
+          </article>
+
+          <article class="section job-entry">
+            <h3>Lead Software Developer</h3>
+            <div class="job-meta">
+              <span class="company">Luxoft USA</span> |
+              <span class="dates">Oct 2021 – Sep 2023</span>
+              <span class="location">Los Angeles, California, US</span>
+            </div>
+            <ul>
+              <li>Led UI modernization with React, Cypress, @mui/material.</li>
+              <li>
+                Introduced design systems and performance monitoring tools.
+              </li>
+              <li>
+                Partnered with stakeholders to translate product ideas into
+                scalable solutions.
+              </li>
+            </ul>
+          </article>
+
+          <article class="section job-entry">
+            <h3>Senior Software Developer</h3>
+            <div class="job-meta">
+              <span class="company">Luxoft GmbH</span> |
+              <span class="dates">Oct 2018 – Sep 2021</span>
+              <span class="location">Munich, Germany</span>
+            </div>
+            <ul>
+              <li>
+                Developed a cloud-based data pipeline for automotive telemetry
+                using AWS and GCP.
+              </li>
+              <li>
+                Led platform telemetry and simulation systems for major
+                automotive clients.
+              </li>
+              <li>
+                Improved system flexibility with REST/GraphQL and Angular
+                frontend tools.
+              </li>
+              <li>
+                Built test automation and load scenario frameworks for QA teams.
+              </li>
+              <li>
+                Implemented CI/CD pipelines with GitHub Actions and Jenkins.
+              </li>
+              <li>Mentored junior developers in best practices and tools.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="highlights">
+          <h2>Highlights</h2>
           <ul>
             <li>
-              Led the modernization and UI redesign of a financial analytics
-              platform for portfolio managers and risk analysts.
+              Participated in large-scale engineering programs with critical
+              responsibilities in architecture, testing, and delivery.
             </li>
             <li>
-              Integrated <strong>FastAPI</strong> backend with
-              <strong>data pipelines</strong> for asset analysis and exposure
-              modeling.
+              Architected and deployed secure, scalable systems across
+              <strong>AWS</strong>, <strong>GCP</strong>, and
+              <strong>Azure</strong>.
             </li>
             <li>
-              Integrated multiple financial data sources and automated data
-              transformation workflows using modern cloud tools.
+              Delivered AI-enhanced analytics pipelines and enterprise APIs with
+              real-time UX.
             </li>
             <li>
-              Implemented <strong>observability and monitoring</strong> with
-              Prometheus, Grafana, and ELK.
+              Designed and implemented <strong>CI/CD</strong> pipelines,
+              improving deployment efficiency by 30%.
             </li>
             <li>
-              Mentored engineers, set technical OKRs, and drove architectural
-              scalability across the platform.
+              Developed and maintained <strong>microservices</strong> using
+              <strong>Node.js</strong>, <strong>FastAPI</strong>, and
+              <strong>Spring Boot</strong>.
+            </li>
+            <li>
+              Led the migration of legacy systems to cloud-native architectures,
+              reducing costs by 20%.
+            </li>
+            <li>
+              Enhanced system performance and reliability through
+              <strong>load testing</strong> and
+              <strong>performance tuning</strong>.
+            </li>
+            <li>
+              Collaborated with cross-functional teams to define and implement
+              <strong>technical OKRs</strong>.
+            </li>
+            <li>
+              Implemented <strong>monitoring</strong> and
+              <strong>logging</strong> solutions using
+              <strong>Prometheus</strong>, <strong>Grafana</strong>, and
+              <strong>ELK stack</strong>.
+            </li>
+            <li>
+              Developed and maintained <strong>RESTful APIs</strong> and
+              <strong>GraphQL</strong> services for data access.
+            </li>
+            <li>
+              Implemented <strong>security best practices</strong> in cloud
+              environments, including IAM policies and VPC configurations.
+            </li>
+            <li>
+              Designed and implemented <strong>data pipelines</strong> for
+              real-time analytics using <strong>Apache Kafka</strong> and
+              <strong>AWS Kinesis</strong>.
+            </li>
+            <li>
+              Worked with <strong>Agile</strong> methodologies, participating in
+              sprint planning and retrospectives.
             </li>
           </ul>
-        </div>
-
-        <div class="section job-entry">
-          <h3>Lead Software Developer</h3>
-          <div class="job-meta">
-            <span class="company">Luxoft USA</span> |
-            <span class="dates">Oct 2021 – Sep 2023</span>
-            <span class="location">Los Angeles, California, US</span>
-          </div>
-          <ul>
-            <li>Led UI modernization with React, Cypress, @mui/material.</li>
-            <li>Introduced design systems and performance monitoring tools.</li>
-            <li>
-              Partnered with stakeholders to translate product ideas into
-              scalable solutions.
-            </li>
-          </ul>
-        </div>
-
-        <div class="section job-entry">
-          <h3>Senior Software Developer</h3>
-          <div class="job-meta">
-            <span class="company">Luxoft GmbH</span> |
-            <span class="dates">Oct 2018 – Sep 2021</span>
-            <span class="location">Munich, Germany</span>
-          </div>
-          <ul>
-            <li>
-              Developed a cloud-based data pipeline for automotive telemetry
-              using AWS and GCP.
-            </li>
-            <li>
-              Led platform telemetry and simulation systems for major automotive
-              clients.
-            </li>
-            <li>
-              Improved system flexibility with REST/GraphQL and Angular frontend
-              tools.
-            </li>
-            <li>
-              Built test automation and load scenario frameworks for QA teams.
-            </li>
-            <li>
-              Implemented CI/CD pipelines with GitHub Actions and Jenkins.
-            </li>
-            <li>Mentored junior developers in best practices and tools.</li>
-          </ul>
-        </div>
-
-        <h2>Highlights</h2>
-        <ul>
-          <li>
-            Participated in large-scale engineering programs with critical
-            responsibilities in architecture, testing, and delivery.
-          </li>
-          <li>
-            Architected and deployed secure, scalable systems across
-            <strong>AWS</strong>, <strong>GCP</strong>, and
-            <strong>Azure</strong>.
-          </li>
-          <li>
-            Delivered AI-enhanced analytics pipelines and enterprise APIs with
-            real-time UX.
-          </li>
-          <li>
-            Designed and implemented <strong>CI/CD</strong> pipelines, improving
-            deployment efficiency by 30%.
-          </li>
-          <li>
-            Developed and maintained <strong>microservices</strong> using
-            <strong>Node.js</strong>, <strong>FastAPI</strong>, and
-            <strong>Spring Boot</strong>.
-          </li>
-          <li>
-            Led the migration of legacy systems to cloud-native architectures,
-            reducing costs by 20%.
-          </li>
-          <li>
-            Enhanced system performance and reliability through
-            <strong>load testing</strong> and
-            <strong>performance tuning</strong>.
-          </li>
-          <li>
-            Collaborated with cross-functional teams to define and implement
-            <strong>technical OKRs</strong>.
-          </li>
-          <li>
-            Implemented <strong>monitoring</strong> and
-            <strong>logging</strong> solutions using
-            <strong>Prometheus</strong>, <strong>Grafana</strong>, and
-            <strong>ELK stack</strong>.
-          </li>
-          <li>
-            Developed and maintained <strong>RESTful APIs</strong> and
-            <strong>GraphQL</strong> services for data access.
-          </li>
-          <li>
-            Implemented <strong>security best practices</strong> in cloud
-            environments, including IAM policies and VPC configurations.
-          </li>
-          <li>
-            Designed and implemented <strong>data pipelines</strong> for
-            real-time analytics using <strong>Apache Kafka</strong> and
-            <strong>AWS Kinesis</strong>.
-          </li>
-          <li>
-            Worked with <strong>Agile</strong> methodologies, participating in
-            sprint planning and retrospectives.
-          </li>
-        </ul>
-      </div>
+        </section>
+      </main>
     </div>
     <footer class="footer">
       <p class="footer-text">
