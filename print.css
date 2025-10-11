@@ -163,6 +163,33 @@
     display: none !important;
   }
 
+  /* Matrix theme print adjustments */
+  :root.theme-matrix .content {
+    background: var(--container-bg) !important;
+    color: var(--text-color) !important;
+  }
+  :root.theme-matrix .highlight {
+    background: var(--highlight-bg) !important;
+  }
+
+  /* Dark theme print adjustments */
+  :root.theme-dark .content {
+    background: var(--container-bg) !important;
+    color: var(--text-color) !important;
+  }
+  :root.theme-dark .highlight {
+    background: var(--highlight-bg) !important;
+  }
+
+  /* Cyberpunk theme print adjustments */
+  :root.theme-cyberpunk .content {
+    background: var(--container-bg) !important;
+    color: var(--text-color) !important;
+  }
+  :root.theme-cyberpunk .highlight {
+    background: var(--highlight-bg) !important;
+  }
+
   h1, h2, h3 { break-after: avoid; break-inside: avoid; }
   .section, .job-entry, #highlights, .job-entry ul, .job-entry li { break-inside: avoid; }
   /* Give main column a touch more room if needed */
