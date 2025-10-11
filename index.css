@@ -152,23 +152,7 @@ body {
   top: 20px;
   right: 20px;
   z-index: 1000;
-  background: var(--container-bg);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.style-selector.collapsed {
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  background: var(--container-bg);
-  border: 2px solid var(--accent-color);
-  border-radius: 50px;
+  width: 200px;
 }
 
 /* Print header (visible only in print) */
@@ -187,38 +171,132 @@ body {
   display: none;
 }
 
-.style-selector.expanded {
-  width: auto;
-  height: auto;
-  padding: 12px;
+.theme-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   background: var(--container-bg);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  border-radius: 8px;
   border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  height: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  justify-content: center;
+  position: relative;
 }
 
-.style-selector:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+.theme-trigger:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-color: var(--accent-color);
+}
+
+.style-selector.expanded .theme-trigger {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom-color: transparent;
+}
+
+.theme-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--container-bg);
+  border: 1px solid var(--accent-color);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.style-selector.expanded .theme-options {
+  display: flex;
 }
 
 .theme-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.style-selector.expanded .theme-trigger {
+  transform: none;
+}
+
+.theme-icon .swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-icon .swatch-blue {
+  background: #005ea2;
+}
+
+.theme-icon .swatch-green {
+  background: #1fa86a;
+}
+
+.theme-icon .swatch-matrix {
+  background: #00ff66;
+}
+
+.theme-icon .swatch-dark {
+  background: #0f1720;
+}
+
+.theme-icon .swatch-cyber {
+  background: #ff00ff;
+}
+
+.theme-selector-trigger[data-theme='blue'] .swatch-blue,
+.theme-selector-trigger[data-theme='green'] .swatch-green,
+.theme-selector-trigger[data-theme='matrix'] .swatch-matrix,
+.theme-selector-trigger[data-theme='dark'] .swatch-dark,
+.theme-selector-trigger[data-theme='cyberpunk'] .swatch-cyber {
+  transform: scale(1.3);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 4px var(--accent-color), 0 1px 2px rgba(0, 0, 0, 0.2); /* Reduced glow effect */
+}
+
+.theme-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.style-selector.expanded .theme-label {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  align-self: center;
+}
+
+.theme-chevron {
+  display: inline-flex;
+  margin-left: 4px;
   transition: transform 0.3s ease;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--text-color);
+  opacity: 0.7;
 }
 
-.style-selector.expanded .theme-icon {
-  transform: rotate(45deg);
-}
-
-.theme-icon svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--accent-color);
+.style-selector.expanded .theme-chevron {
+  transform: rotate(180deg);
 }
 
 .theme-options {
@@ -233,11 +311,17 @@ body {
 }
 
 .theme-option {
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 12px 16px;
+  border-radius: 0;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   color: var(--text-color);
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.theme-option:last-child {
+  border-bottom: none;
 }
 
 .theme-option:hover {
@@ -245,8 +329,9 @@ body {
 }
 
 .theme-option.active {
-  background: var(--text-color);
-  color: var(--container-bg);
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Matrix theme specific styles */
