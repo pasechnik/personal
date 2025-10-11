@@ -355,18 +355,17 @@ body {
 }
 
 .container {
-  display: -webkit-flex;
   display: flex;
   max-width: 1000px;
   margin: 40px auto;
   background: var(--container-bg);
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
 .sidebar {
-  width: 33%;
+  flex: 0 0 33%;
+  max-width: 33%;
   padding: 20px;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
@@ -382,7 +381,8 @@ body {
   word-break: break-all;
 }
 .content {
-  width: 70%;
+  flex: 1 1 67%;
+  min-width: 0;
   padding: 10px 30px;
   background: var(--container-bg);
   color: var(--text-color);
