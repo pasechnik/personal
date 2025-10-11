@@ -431,6 +431,25 @@ body {
   margin-bottom: 5px; /* Space between bullet points */
 }
 
+/* Earlier Experience Section - visually lighter */
+#earlier-experience {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color); /* Soft accent, not like job-entry */
+  background: color-mix(in srgb, var(--container-bg) 90%, var(--highlight-bg));
+  border-radius: 8px;
+}
+
+#earlier-experience h2 {
+  border-bottom: 0;
+  margin-top: 0;
+}
+
+#earlier-experience ul {
+  margin-top: 8px;
+}
+
 h1 {
   color: var(--accent-color);
   margin-top: 0;

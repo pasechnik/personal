@@ -41,6 +41,8 @@
     padding: 16mm 10mm 12mm 6mm !important; /* Increase padding for better spacing */
     border-right: 0 !important;
     width: auto !important;
+    max-width: none !important;
+    flex: none !important; /* Override flexbox */
     grid-column: 1;
     break-inside: avoid !important; /* Prevent sidebar content from breaking inside */
     page-break-inside: avoid !important; /* Avoid page breaks within the sidebar */
@@ -68,6 +70,8 @@
     padding: 4mm 4mm 12mm 4mm !important;
     width: auto !important;
     max-width: 100% !important;
+    flex: none !important; /* Override flexbox */
+    min-width: auto !important;
     grid-column: 2;
   }
 
@@ -103,10 +107,22 @@
   .highlight {
     background: #eef4ff !important;
     border-left: 4px solid var(--accent-color) !important;
-    padding: 10pt 6pt !important;
+    padding: 8pt 6pt !important;
     box-shadow: none !important;
-    margin-bottom: 0 !important; /* Reduce gap between Profile and Experience */
+    margin-bottom: 6pt !important;
     break-after: avoid !important; /* Prevent break after Profile block */
+    break-inside: avoid !important; /* Prevent break inside Profile block */
+    page-break-inside: avoid !important; /* Legacy support */
+  }
+
+  .highlight p {
+    margin: 0 0 6pt 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .highlight p:last-child {
+    margin-bottom: 0 !important;
   }
 
   /* Job entries */
@@ -114,12 +130,47 @@
     border-left: 3px solid var(--accent-color) !important;
     padding-left: 10pt !important;
     margin-bottom: 12pt !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
+  
+  .job-entry h3 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  
   .job-meta {
     opacity: 0.95 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    display: block !important;
   }
+  
+  .job-meta br {
+    display: none !important;
+  }
+  
+  .job-meta .location {
+    display: inline !important;
+  }
+  
+  .job-meta .location::before {
+    content: ", " !important;
+  }
+  
+  .job-note {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  
   .job-entry li {
     margin-bottom: 4pt !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
   /* Print header (if present) */
