@@ -173,6 +173,32 @@
     page-break-inside: avoid !important;
   }
 
+  /* Earlier Experience section */
+  #earlier-experience {
+    margin-top: 14pt !important;
+    padding: 10pt 12pt !important;
+    border: 1px solid var(--border-color) !important;
+    border-left: 4px solid var(--border-color) !important;
+    background: color-mix(in srgb, #fff 95%, var(--highlight-bg)) !important;
+    border-radius: 6pt !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  #earlier-experience h2 {
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-bottom: 4pt !important;
+    margin-top: 0 !important;
+  }
+
+  #earlier-experience p {
+    margin: 6pt 0 !important;
+  }
+
+  #earlier-experience ul {
+    margin-top: 6pt !important;
+  }
+
   /* Print header (if present) */
   .print-header {
     grid-column: 1 / -1;

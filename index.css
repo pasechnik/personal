@@ -442,7 +442,8 @@ body {
 }
 
 #earlier-experience h2 {
-  border-bottom: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
   margin-top: 0;
 }
 
@@ -515,6 +516,11 @@ ul {
   color: rgba(0, 0, 0, 0.45); /* lighter on light themes */
   font-weight: 300;
   text-align: center;
+}
+
+.footer .heart {
+  color: var(--accent-color);
+  font-style: normal;
 }
 
 /* Ensure footer is subtle in dark/matrix themes */
