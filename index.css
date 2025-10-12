@@ -134,6 +134,16 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh; /* Test change */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scroll on html element */
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box; /* Ensure all elements include padding/border in width */
 }
 
 /* Screen reader only */
@@ -149,10 +159,10 @@ body {
 /* Floating theme selector */
 .style-selector {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   z-index: 1000;
-  width: 200px;
+  width: 180px;
 }
 
 /* Print header (visible only in print) */
@@ -175,12 +185,15 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: var(--container-bg);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px); /* Adds a subtle blur effect */
+  -webkit-backdrop-filter: blur(2px); /* For Safari support */
+  /* background: var(--container-bg); */
   border: 1px solid var(--accent-color);
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 4px 4px;
   cursor: pointer;
-  height: 40px;
+  /* height: 40px; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   justify-content: center;
@@ -206,7 +219,9 @@ body {
   display: none;
   flex-direction: column;
   gap: 0;
-  background: var(--container-bg);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px); /* Adds a subtle blur effect */
+  -webkit-backdrop-filter: blur(2px); /* For Safari support */
   border: 1px solid var(--accent-color);
   border-top: none;
   border-radius: 0 0 8px 8px;
@@ -276,6 +291,10 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-color);
   white-space: nowrap;
+  text-shadow: 
+    0 0 3px rgba(255, 255, 255, 0.8),
+    0 0 6px rgba(255, 255, 255, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .style-selector.expanded .theme-label {
@@ -318,6 +337,10 @@ body {
   color: var(--text-color);
   font-size: 0.875rem;
   border-bottom: 1px solid var(--border-color);
+  text-shadow: 
+    0 0 3px rgba(255, 255, 255, 0.8),
+    0 0 6px rgba(255, 255, 255, 0.6),
+    1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .theme-option:last-child {
@@ -528,18 +551,24 @@ ul {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
   
   .sidebar,
   .content {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
   }
   
   .sidebar {
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   
   .content {
@@ -559,36 +588,118 @@ ul {
   }
   
   .photo-container {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  
+  .photo {
     width: 120px;
     height: 120px;
-    margin: 0 auto 15px;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
   }
   
   .sidebar p {
     font-size: 0.9rem;
     margin-bottom: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .sidebar ul li {
     font-size: 0.9rem;
     margin-bottom: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .sidebar a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
   .style-selector {
-    width: 180px;
-    font-size: 0.85rem;
+    width: 140px;
+    font-size: 0.75rem;
+    top: 5px;
+    right: 5px;
+    transform: scale(0.9);
+  }
+  
+  .theme-trigger {
+    padding: 2px 4px;
+    height: 24px;
+    gap: 2px;
+    background: var(--sidebar-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  
+  .theme-label {
+    font-size: 0.7rem;
+    color: var(--sidebar-text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .theme-chevron {
+    border-top-color: var(--sidebar-text);
+  }
+  
+  .theme-icon .swatch {
+    width: 7px;
+    height: 7px;
   }
   
   .theme-option {
-    padding: 8px 12px;
-    font-size: 0.85rem;
+    padding: 3px 6px;
+    font-size: 0.75rem;
+    background: transparent;
+    color: var(--sidebar-text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .theme-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .theme-options {
+    background: var(--sidebar-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
   
   .print-btn {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    top: 10px;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    top: auto;
+    bottom: 10px;
     right: 10px;
+    left: auto;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .print-btn:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
   }
   
   .section {
@@ -635,10 +746,62 @@ ul {
   }
   
   .style-selector {
-    width: 160px;
+    width: 120px;
+    transform: scale(0.85);
+    top: 3px;
+    right: 3px;
+  }
+  
+  .theme-trigger {
+    padding: 2px 3px;
+    height: 20px;
+    gap: 2px;
+    background: var(--sidebar-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  
+  .theme-label {
+    font-size: 0.65rem;
+    color: var(--sidebar-text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .theme-chevron {
+    border-top-color: var(--sidebar-text);
+  }
+  
+  .theme-icon .swatch {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .theme-option {
+    padding: 3px 5px;
+    font-size: 0.65rem;
+    background: transparent;
+    color: var(--sidebar-text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .theme-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .theme-options {
+    background: var(--sidebar-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
   
   .photo-container {
+    text-align: center;
+    margin: 0 auto 15px;
+  }
+  
+  .photo {
     width: 100px;
     height: 100px;
   }
@@ -658,11 +821,6 @@ ul {
     min-height: 44px; /* Apple's recommendation for touch targets */
     display: flex;
     align-items: center;
-  }
-  
-  .print-btn {
-    min-height: 44px;
-    min-width: 44px;
   }
   
   .theme-selector-trigger {
