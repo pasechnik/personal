@@ -115,7 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle expanded state on click
     styleSelector.addEventListener('click', (e) => {
       if (!e.target.classList.contains('theme-option')) {
-        styleSelector.classList.toggle('expanded');
+        const isExpanded = styleSelector.classList.toggle('expanded');
+        styleSelector.setAttribute('aria-expanded', isExpanded);
       }
     });
 
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const theme = e.target.dataset.theme;
         applyTheme(theme);
         styleSelector.classList.remove('expanded');
+        styleSelector.setAttribute('aria-expanded', 'false');
 
         // Update active state
         themeOptions.forEach((opt) => opt.classList.remove('active'));

@@ -434,11 +434,7 @@ body {
 /* Earlier Experience Section - visually lighter */
 #earlier-experience {
   margin-top: 10px;
-  padding: 12px 14px;
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--border-color); /* Soft accent, not like job-entry */
-  background: color-mix(in srgb, var(--container-bg) 90%, var(--highlight-bg));
-  border-radius: 8px;
+  padding: 0;
 }
 
 #earlier-experience h2 {
@@ -532,9 +528,155 @@ ul {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 10px;
   }
+  
   .sidebar,
   .content {
     width: 100%;
+    max-width: 100%;
+  }
+  
+  .sidebar {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  .photo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+  }
+  
+  .sidebar p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .sidebar ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .style-selector {
+    width: 180px;
+    font-size: 0.85rem;
+  }
+  
+  .theme-option {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .print-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .job-entry {
+    padding: 12px;
+  }
+  
+  .highlight {
+    padding: 12px;
+  }
+  
+  .footer {
+    padding: 15px 10px;
+  }
+  
+  .footer-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  .sidebar {
+    padding: 10px;
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .style-selector {
+    width: 160px;
+  }
+  
+  .photo-container {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .print-btn {
+    display: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  a {
+    padding: 4px 0;
+    display: inline-block;
+  }
+  
+  .theme-option {
+    min-height: 44px; /* Apple's recommendation for touch targets */
+    display: flex;
+    align-items: center;
+  }
+  
+  .print-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .theme-selector-trigger {
+    min-height: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .theme-option:hover {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  .theme-option:active {
+    background: var(--accent-color);
+    opacity: 0.8;
   }
 }

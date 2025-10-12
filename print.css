@@ -24,7 +24,8 @@
   /* Two-column layout (forces white background in print) */
   .container {
     display: grid !important;
-    grid-template-columns: 35% 65% !important;
+    grid-template-columns: 32% 68% !important;
+    gap: 0 !important;
     background: #fff !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -32,13 +33,14 @@
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* Sidebar styling */
   .sidebar {
     background: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
-    padding: 16mm 10mm 12mm 6mm !important; /* Increase padding for better spacing */
+    padding: 16mm 8mm 12mm 6mm !important;
     border-right: 0 !important;
     width: auto !important;
     max-width: none !important;
@@ -47,6 +49,7 @@
     break-inside: avoid !important; /* Prevent sidebar content from breaking inside */
     page-break-inside: avoid !important; /* Avoid page breaks within the sidebar */
     word-wrap: break-word !important; /* Ensure long words wrap properly */
+    box-sizing: border-box !important;
   }
   .sidebar h2,
   .sidebar h3 {
@@ -67,12 +70,13 @@
   /* Main content */
   .content {
     color: #222 !important;
-    padding: 4mm 4mm 12mm 4mm !important;
+    padding: 4mm 2mm 12mm 4mm !important;
     width: auto !important;
     max-width: 100% !important;
     flex: none !important; /* Override flexbox */
     min-width: auto !important;
     grid-column: 2;
+    box-sizing: border-box !important;
   }
 
   /* Headings */
@@ -175,12 +179,8 @@
 
   /* Earlier Experience section */
   #earlier-experience {
-    margin-top: 14pt !important;
-    padding: 10pt 12pt !important;
-    border: 1px solid var(--border-color) !important;
-    border-left: 4px solid var(--border-color) !important;
-    background: color-mix(in srgb, #fff 95%, var(--highlight-bg)) !important;
-    border-radius: 6pt !important;
+    margin: 14pt 0 10pt 0 !important;
+    padding: 0 !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
@@ -197,6 +197,7 @@
 
   #earlier-experience ul {
     margin-top: 6pt !important;
+    padding-left: 18pt !important;
   }
 
   /* Print header (if present) */
@@ -283,9 +284,5 @@
   .job-entry ul,
   .job-entry li {
     break-inside: avoid;
-  }
-  /* Give main column a touch more room if needed */
-  .container {
-    grid-template-columns: 32% 68%;
   }
 }
