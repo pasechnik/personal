@@ -114,10 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (styleSelector) {
     // Toggle expanded state on click
     styleSelector.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('theme-option')) {
-        const isExpanded = styleSelector.classList.toggle('expanded');
-        styleSelector.setAttribute('aria-expanded', isExpanded);
+      // Ignore clicks on print button or theme options
+      if (
+        e.target.classList.contains('theme-option') ||
+        e.target.classList.contains('print-btn') ||
+        e.target.closest('.print-btn')
+      ) {
+        return;
       }
+      const isExpanded = styleSelector.classList.toggle('expanded');
+      styleSelector.setAttribute('aria-expanded', isExpanded);
     });
 
     // Handle theme option clicks
@@ -154,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const printButton = document.querySelector('.print-btn');
   if (printButton) {
-    printButton.addEventListener('click', () => {
+    printButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent event bubbling
       window.print();
     });
   }
