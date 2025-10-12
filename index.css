@@ -370,6 +370,14 @@ html {
   box-shadow: 0 4px 12px rgba(0,0,0,.2);
 }
 
+.print-btn-short {
+  display: none;
+}
+
+.print-btn-full {
+  display: inline;
+}
+
 /* Matrix theme specific button styling */
 .theme-matrix .print-btn {
   background: black;
@@ -702,6 +710,14 @@ ul {
     transform: translateY(-1px);
   }
   
+  .print-btn-full {
+    display: none;
+  }
+  
+  .print-btn-short {
+    display: inline;
+  }
+  
   .section {
     margin-bottom: 20px;
   }
@@ -804,10 +820,6 @@ ul {
   .photo {
     width: 100px;
     height: 100px;
-  }
-  
-  .print-btn {
-    display: none;
   }
 }
 
