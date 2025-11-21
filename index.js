@@ -139,6 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
         option.classList.add('active');
       });
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      const isExpanded = styleSelector.classList.contains('expanded');
+      const clickedInside = styleSelector.contains(event.target);
+      if (isExpanded && !clickedInside) {
+        styleSelector.classList.remove('expanded');
+        styleSelector.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   // Restore saved theme or fall back to system preference

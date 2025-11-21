@@ -17,6 +17,38 @@
     padding: 0 !important;
   }
 
+  /* Force light palette for print regardless of theme */
+  :root,
+  :root.theme-dark,
+  :root.theme-matrix,
+  :root.theme-cyberpunk,
+  :root.theme-green,
+  :root.theme-blue {
+    background: #fff !important;
+    color: #111 !important;
+    --bg-color: #ffffff !important;
+    --container-bg: #ffffff !important;
+    --sidebar-bg: #f7f8fb !important;
+    --sidebar-text: #111111 !important;
+    --sidebar-heading: #111111 !important;
+    --text-color: #111111 !important;
+    --link-color: #0b59c2 !important;
+    --accent-color: #005ea2 !important;
+    --highlight-bg: #eef3fb !important;
+    --border-color: #dcdfe6 !important;
+    --photo-border: #c8d4e3 !important;
+    --image-filter: none !important;
+  }
+
+  .theme-dark,
+  .theme-matrix,
+  .theme-cyberpunk,
+  .theme-green,
+  .theme-blue {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
   .print-btn {
     display: none !important;
   }
@@ -137,12 +169,12 @@
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
-  
+
   .job-entry h3 {
     break-after: avoid !important;
     page-break-after: avoid !important;
   }
-  
+
   .job-meta {
     opacity: 0.95 !important;
     break-inside: avoid !important;
@@ -151,26 +183,26 @@
     page-break-after: avoid !important;
     display: block !important;
   }
-  
+
   .job-meta br {
     display: none !important;
   }
-  
+
   .job-meta .location {
     display: inline !important;
   }
-  
+
   .job-meta .location::before {
-    content: ", " !important;
+    content: ', ' !important;
   }
-  
+
   .job-note {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     break-after: avoid !important;
     page-break-after: avoid !important;
   }
-  
+
   .job-entry li {
     margin-bottom: 4pt !important;
     break-inside: avoid !important;
