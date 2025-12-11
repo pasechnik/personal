@@ -1,91 +1,154 @@
 # Volodymyr Pasichnyk
 
-<div align="center">
-  <img src="https://avatars.githubusercontent.com/pasechnik" width="150" height="150" alt="Volodymyr Pasichnyk" style="border-radius: 50%;">
-</div>
+![Volodymyr Pasichnyk](https://avatars.githubusercontent.com/pasechnik)
 
-## Principal Software Engineer
+AI Founder — VoiceOS & GeoAI  
+Principal Software Engineer (FinTech · React · FastAPI · AWS · TypeScript)
 
-- [LinkedIn](https://linkedin.com/in/vladimirpasechnik)
-- [GitHub](https://github.com/pasechnik)
-- [Website](http://pasichnyk.codecot.com)
-- 📧 <vmasterua@yahoo.com>
-- 📱 +44 7470 719 860
+Building a new interaction layer between humans, devices and the real world:  
+**persistent voice interface + context + location intelligence + real-world actions** — the foundation for an AI-enabled **LifeOS**.
 
----
-
-## 👤 Bio
-
-**Principal Engineer with 15+ years in cloud-native platforms, FinTech, and AI-driven systems.**
-
-Full-stack architect and team leader experienced in global delivery and technical strategy.
+- Email: **vmasterua@yahoo.com**
+- Phone: **+44 7470 719 860**
+- LinkedIn: [linkedin.com/in/vladimirpasechnik](https://www.linkedin.com/in/vladimirpasechnik)
+- GitHub: [github.com/pasechnik](https://github.com/pasechnik)
+- Location: London, United Kingdom
+- Website: [pasichnyk.codecot.com](http://pasichnyk.codecot.com)
 
 ---
 
-## 🛠 Skills
+## Currently building — VoiceOS + GeoAI
 
-- **Frontend**: React, Angular, Vue, TypeScript
-- **Backend**: Node.js, Fastify, FastAPI, Python
-- **Cloud**: AWS, GCP, Azure
-- **DevOps**: Docker, Kubernetes, GitHub Actions, Jenkins
-- **Leadership**: Mentoring, Architecture Planning, CI/CD Governance
+VoiceOS + GeoAI — a persistent, privacy-first, voice- and location-aware layer between humans and devices that turns context into real-world actions.
 
----
+- **VoiceOS:** always-available voice interface across phone, earbuds, car, and home.
+- **GeoAI:** spatial understanding, geo-triggers, and behavior policies based on where you are and what you're doing.
+- **Memory Graph / Personal Data Graph:** long-term memory of habits, people, places, and projects.
+- **Behavior Engine:** rules, policies, and agents that decide what to do next on your behalf.
+- **Contextual Agents:** LLM-orchestrated tools that can plan, reason, and act.
+- **Secure Voice Payments & Biometric Voice Security:** frictionless auth and payments using voice as identity.
+- **Privacy-first architecture:** on-device inference, encryption, and explicit consent for any external data flow.
 
-## 💼 Experience
-
-### Principal Software Developer
-
-**Luxoft UK** · _Apr 2024 – Present_  
-London, United Kingdom of Great Britain
-
-- Architected an AWS-based analytics platform using React, TypeScript, FastAPI.
-- Led cross-functional teams and defined technical OKRs and strategic delivery goals.
-- Introduced performance improvements and team-wide mentoring initiatives.
-
-### Lead Software Developer
-
-**Luxoft USA** · _Oct 2021 – Apr 2023_  
-Los Angeles, California, United States
-
-- Modernized UI using React and Cypress.
-- Led design system efforts and integrated observability tools.
-- Translated business needs into scalable, user-centered technical solutions.
-
-### Senior Software Developer
-
-**Luxoft GmbH (Automotive Sector)** · _Oct 2018 – Sep 2021_  
-Munich, Bayern, Germany
-
-- Designed telemetry systems and simulation tools for vehicle platforms.
-- Integrated REST, GraphQL services with Angular dashboards.
-- Delivered robust automated QA pipelines and scenario-based load testing tools.
+This stack is the basis for a future **LifeOS** — an ambient, invisible UI that lets you live your life while the system handles orchestration.
 
 ---
 
-## 🌟 Highlights
+## Vision — LifeOS & the human–device interaction layer
 
-- Participated in large-scale engineering programs with critical responsibilities in architecture, testing, and delivery.
-- Architected and deployed secure, scalable systems across **AWS**, **GCP**, and **Azure**.
-- Delivered AI-enhanced analytics pipelines and enterprise APIs with real-time UX.
+Modern assistants are either scripted or stateless. LLM agents are powerful but lack persistent context, memory, and real-world grounding.
 
----
+- A unified **voice + context + location** fabric across devices.
+- **Ambient computing / invisible UI:** less screen, more intention.
+- Next-gen personal assistant that understands your **voice** (Whisper pipelines), knows your **context** (Memory Graph), understands your **world** (GeoAI), and can **act** (LLM orchestration, APIs, secure actions).
 
-## 👥 Team Leadership & Development
-
-- **Mentored** engineers across all seniority levels, promoting a culture of continuous learning and technical excellence.
-- **Managed team** alignment with project goals by tracking delivery metrics, providing feedback, and driving accountability.
-- Created **onboarding** programs and documentation standards to streamline **knowledge transfer** and **team scaling**.
-- Fostered **cross-team collaboration** through regular tech reviews, paired programming, and architecture syncs.
-- Implemented **performance monitoring** and feedback loops to align team efforts with delivery goals.
+This is a platform for persistent, contextual, privacy-first assistants.
 
 ---
 
-## 🎓 Education
+## Architecture Overview
 
-- **Ph.D. in Applied Mathematics** – Dnipropetrovsk National University, Ukraine (2005)
-- **M.A. in Applied Mathematics** – Dnipropetrovsk National University, Ukraine (1997)
+### VoiceOS Layer
+
+- On-device inference for low-latency, privacy-preserving interaction.
+- Whisper pipelines for robust STT across accents and noise.
+- Biometric voice security binding authentication and authorization to voice.
+- Human–device interaction layer using voice as the primary interface.
+
+### Memory Graph & Personal Data Graph
+
+- Long-term signals: routines, habits, locations, people, projects, preferences.
+- Models calendar, communication, commitments, tasks, financial events.
+- Privacy-first architecture with local ownership of data.
+
+### Behavior Engine
+
+- Policies, safety rails, and contextual rules (time, location, identity, risk).
+- Multi-agent orchestration for complex tasks with escalation when needed.
+- Contextual agents for scheduling, travel, personal finance, home automation, and knowledge work.
+
+### GeoAI Layer
+
+- Geo-triggers and geo-fencing (leave home, arrive at work/gym/store).
+- Location-aware behavior with policies for home, travel, work, driving, focus time.
+- Spatio-temporal patterns that pre-emptively surface the right actions and information.
 
 ---
 
-> 💬 _Open to challenging engineering leadership roles and platform innovation opportunities._
+## Skills & Focus Areas
+
+- **AI, Agents & Voice:** VoiceOS architectures, Whisper pipelines, VAD; on-device inference; LLM orchestration, tool-use, multi-agent setups; Memory Graphs, behavior modeling; secure voice payments and biometric voice security.
+- **Frontend & Interaction:** React, TypeScript, @mui/material, Zustand, React Query; high-performance data-heavy UIs, virtualized lists, complex dashboards; assistant UX and ambient interfaces.
+- **Backend, Cloud & Data:** FastAPI, Node.js, REST, GraphQL, proxy services; AWS (Lambda, API Gateway, S3, CloudFront, CloudWatch, EKS); data pipelines, ETL, telemetry, observability.
+- **Leadership & Product:** Architecture strategy, mentoring, code review culture, cross-team alignment; translating fintech, automotive, and AI domains into product experiences with PMs, designers, and quants.
+
+---
+
+## Experience
+
+### Principal Software Developer — FinTech Analytics Platform
+**Luxoft UK · Apr 2024 – Present · London, United Kingdom**
+
+Internal transition within Luxoft, continuing work with a top-tier **$2T+ asset manager** on a new risk and volatility analytics initiative.
+
+- Led architecture and delivery of a **portfolio risk and volatility** analytics UI used by portfolio managers and risk teams.
+- Built modular workflows with **React, TypeScript, @mui/material** to surface complex financial metrics with clarity and performance.
+- Integrated **FastAPI** services and analytics pipelines to deliver responsive, real-time visualizations.
+- Partnered with product, quant, and data teams to turn risk models into interactive decision-support tools.
+- Introduced performance profiling, observability, and UI standards for a suite of analytical dashboards.
+- Mentored globally distributed engineers; aligned architecture patterns across multiple applications.
+
+**Tech:** React, TypeScript, @mui/material, FastAPI, AWS, analytics pipelines, observability.
+
+### Lead Software Developer — Decision Support & Communication Platform
+**Luxoft USA · Oct 2021 – Mar 2024 · Los Angeles, California, USA**
+
+Internal transfer within Luxoft global engineering.
+
+- Modernised a **decision-support and communication platform** for portfolio managers and investment committees.
+- Elevated frontend architecture and UX with **React, TypeScript, Cypress, @mui/material**.
+- Collaborated with Java services and **AWS Lambda** to deliver real-time portfolio insights and automated reporting.
+- Codified design systems, performance monitoring, and CI/CD practices for predictable releases.
+- Translated investment and compliance requirements into scalable, data-driven workflows.
+
+**Tech:** React, TypeScript, Cypress, @mui/material, Java services, AWS Lambda, CI/CD, design systems.
+
+### Senior Software Developer — Automotive AI & Telemetry
+**Luxoft GmbH · Oct 2018 – Sep 2021 · Munich, Germany**
+
+Member of Luxoft’s automotive and data analytics division, working with global OEMs such as **BMW, Renault-Nissan, Continental**.
+
+- Built telemetry and analytics tools for **connected vehicles**, enabling data-driven R&D decisions.
+- Contributed to **AI perception systems** for road-scene recognition across diverse conditions.
+- Delivered cloud data pipelines on **AWS and GCP** for large-scale telemetry ingestion and visualization.
+- Created internal tools for data labeling and model evaluation to accelerate perception research.
+- Implemented CI/CD with GitHub Actions and Jenkins; mentored engineers on modern cloud practices.
+
+**Tech:** AWS, GCP, telemetry pipelines, AI perception, GitHub Actions, Jenkins, data governance.
+
+### Earlier Experience — Full-stack & Cloud Engineering
+**Consultant & Software Engineer · Europe & US**
+
+- External consultant for **Cisco Systems**, contributing to a cloud deployment management platform automating provisioning, monitoring, and orchestration.
+- Delivered scalable web solutions and data integration workflows in **e-commerce, pharma, and digital publishing**.
+- Built full-stack systems using **JavaScript, .NET, and SQL**, focusing on enterprise integration and workflow automation.
+- Gained experience in distributed delivery, cross-domain system design, and direct client collaboration.
+
+---
+
+## Education
+
+- **Ph.D. in Applied Mathematics**, 2005  
+- **M.A. in Applied Mathematics**, 1997  
+  Dnipropetrovsk National University, Ukraine
+
+---
+
+## Downloads
+
+- [Download Founder CV — AI / VoiceOS / GeoAI (PDF)](./Volodymyr_Pasichnyk_AI_Founder_CV.pdf)
+- [Download Principal Engineer CV — FinTech Platforms (PDF)](./Volodymyr_Pasichnyk_Principal_Engineer_CV.pdf)
+
+---
+
+© 2025 Volodymyr Pasichnyk — AI Founder, VoiceOS & GeoAI · Principal Software Engineer  
+Built with ♥, Vanilla JS and an obsession for human–device interaction.

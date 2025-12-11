@@ -156,6 +156,13 @@ html {
   overflow: hidden;
 }
 
+.small-note {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.75;
+}
+
 /* Floating theme selector */
 .style-selector {
   position: fixed;
