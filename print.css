@@ -52,6 +52,9 @@
   .print-btn {
     display: none !important;
   }
+  .pdf-btn {
+    display: none !important;
+  }
 
   /* Two-column layout (forces white background in print) */
   .container {

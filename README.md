@@ -2,11 +2,12 @@
 
 ![Volodymyr Pasichnyk](https://avatars.githubusercontent.com/pasechnik)
 
-AI Founder — VoiceOS & GeoAI  
+AI Engineer / Architect — Exploratory Research & Prototyping  
 Principal Software Engineer (FinTech · React · FastAPI · AWS · TypeScript)
 
-Building a new interaction layer between humans, devices and the real world:  
-**persistent voice interface + context + location intelligence + real-world actions** — the foundation for an AI-enabled **LifeOS**.
+I’m working on exploratory research at the intersection of voice interaction, AI-assisted systems, and human-centered workflows — focusing on how AI can support everyday work, thinking, and decision-making.  
+The work is research-driven: prototyping interaction patterns, testing workflow approaches, and identifying recurring patterns and anti-patterns in processes and system design.  
+The goal at this stage is clarity, not a finished product.
 
 - Email: **vmasterua@yahoo.com**
 - Phone: **+44 7470 719 860**
@@ -17,66 +18,57 @@ Building a new interaction layer between humans, devices and the real world:
 
 ---
 
-## Currently building — VoiceOS + GeoAI
+## Current exploration
 
-VoiceOS + GeoAI — a persistent, privacy-first, voice- and location-aware layer between humans and devices that turns context into real-world actions.
-
-- **VoiceOS:** always-available voice interface across phone, earbuds, car, and home.
-- **GeoAI:** spatial understanding, geo-triggers, and behavior policies based on where you are and what you're doing.
-- **Memory Graph / Personal Data Graph:** long-term memory of habits, people, places, and projects.
-- **Behavior Engine:** rules, policies, and agents that decide what to do next on your behalf.
-- **Contextual Agents:** LLM-orchestrated tools that can plan, reason, and act.
-- **Secure Voice Payments & Biometric Voice Security:** frictionless auth and payments using voice as identity.
-- **Privacy-first architecture:** on-device inference, encryption, and explicit consent for any external data flow.
-
-This stack is the basis for a future **LifeOS** — an ambient, invisible UI that lets you live your life while the system handles orchestration.
+- Voice-first interaction experiments
+- Persistent context in long-running conversations/tasks
+- Voice → intent → action prototypes
+- Hybrid on-device + cloud speech processing
+- Pattern / anti-pattern identification in workflows and architecture
 
 ---
 
-## Vision — LifeOS & the human–device interaction layer
+## Long-term direction
 
-Modern assistants are either scripted or stateless. LLM agents are powerful but lack persistent context, memory, and real-world grounding.
-
-- A unified **voice + context + location** fabric across devices.
-- **Ambient computing / invisible UI:** less screen, more intention.
-- Next-gen personal assistant that understands your **voice** (Whisper pipelines), knows your **context** (Memory Graph), understands your **world** (GeoAI), and can **act** (LLM orchestration, APIs, secure actions).
-
-This is a platform for persistent, contextual, privacy-first assistants.
+- Voice-first interaction experiments
+- Persistent context in long-running conversations/tasks
+- Voice → intent → action prototypes
+- Hybrid on-device + cloud speech processing
+- Pattern / anti-pattern identification in workflows and architecture
 
 ---
 
 ## Architecture Overview
 
-### VoiceOS Layer
+### Voice Interaction Layer
 
-- On-device inference for low-latency, privacy-preserving interaction.
-- Whisper pipelines for robust STT across accents and noise.
-- Biometric voice security binding authentication and authorization to voice.
-- Human–device interaction layer using voice as the primary interface.
+- Hybrid on-device + cloud processing for low latency and privacy.
+- Speech-to-text pipelines designed to handle accents and noise.
+- Voice-first UX patterns focused on clarity and low friction.
 
-### Memory Graph & Personal Data Graph
+### Context & Memory Layer
 
-- Long-term signals: routines, habits, locations, people, projects, preferences.
-- Models calendar, communication, commitments, tasks, financial events.
-- Privacy-first architecture with local ownership of data.
+- Captures recurring signals: routines, projects, people, and preferences.
+- Supports long-running tasks with durable state and traceability.
+- Privacy-first design with explicit consent for external data flows.
 
-### Behavior Engine
+### Orchestration & Policy Layer
 
-- Policies, safety rails, and contextual rules (time, location, identity, risk).
-- Multi-agent orchestration for complex tasks with escalation when needed.
-- Contextual agents for scheduling, travel, personal finance, home automation, and knowledge work.
+- Policies and safety rails for tool-use, escalation, and failure handling.
+- Orchestrates intent → action pipelines via tools and APIs.
+- Human-in-the-loop patterns where appropriate.
 
-### GeoAI Layer
+### Location & Environment Layer
 
-- Geo-triggers and geo-fencing (leave home, arrive at work/gym/store).
-- Location-aware behavior with policies for home, travel, work, driving, focus time.
-- Spatio-temporal patterns that pre-emptively surface the right actions and information.
+- Optional location signals for context in tasks and routines.
+- Time + place-aware policies for relevance and safety.
+- Experiments with spatio-temporal patterns to support decisions.
 
 ---
 
 ## Skills & Focus Areas
 
-- **AI, Agents & Voice:** VoiceOS architectures, Whisper pipelines, VAD; on-device inference; LLM orchestration, tool-use, multi-agent setups; Memory Graphs, behavior modeling; secure voice payments and biometric voice security.
+- **AI, Agents & Voice:** Speech processing pipelines (STT/TTS), VAD; hybrid on-device + cloud inference; LLM orchestration and tool-use patterns; context handling in long-running tasks and workflows.
 - **Frontend & Interaction:** React, TypeScript, @mui/material, Zustand, React Query; high-performance data-heavy UIs, virtualized lists, complex dashboards; assistant UX and ambient interfaces.
 - **Backend, Cloud & Data:** FastAPI, Node.js, REST, GraphQL, proxy services; AWS (Lambda, API Gateway, S3, CloudFront, CloudWatch, EKS); data pipelines, ETL, telemetry, observability.
 - **Leadership & Product:** Architecture strategy, mentoring, code review culture, cross-team alignment; translating fintech, automotive, and AI domains into product experiences with PMs, designers, and quants.
@@ -86,6 +78,7 @@ This is a platform for persistent, contextual, privacy-first assistants.
 ## Experience
 
 ### Principal Software Developer — FinTech Analytics Platform
+
 **Luxoft UK · Apr 2024 – Present · London, United Kingdom**
 
 Internal transition within Luxoft, continuing work with a top-tier **$2T+ asset manager** on a new risk and volatility analytics initiative.
@@ -100,6 +93,7 @@ Internal transition within Luxoft, continuing work with a top-tier **$2T+ asset 
 **Tech:** React, TypeScript, @mui/material, FastAPI, AWS, analytics pipelines, observability.
 
 ### Lead Software Developer — Decision Support & Communication Platform
+
 **Luxoft USA · Oct 2021 – Mar 2024 · Los Angeles, California, USA**
 
 Internal transfer within Luxoft global engineering.
@@ -113,6 +107,7 @@ Internal transfer within Luxoft global engineering.
 **Tech:** React, TypeScript, Cypress, @mui/material, Java services, AWS Lambda, CI/CD, design systems.
 
 ### Senior Software Developer — Automotive AI & Telemetry
+
 **Luxoft GmbH · Oct 2018 – Sep 2021 · Munich, Germany**
 
 Member of Luxoft’s automotive and data analytics division, working with global OEMs such as **BMW, Renault-Nissan, Continental**.
@@ -126,6 +121,7 @@ Member of Luxoft’s automotive and data analytics division, working with global
 **Tech:** AWS, GCP, telemetry pipelines, AI perception, GitHub Actions, Jenkins, data governance.
 
 ### Earlier Experience — Full-stack & Cloud Engineering
+
 **Consultant & Software Engineer · Europe & US**
 
 - External consultant for **Cisco Systems**, contributing to a cloud deployment management platform automating provisioning, monitoring, and orchestration.
@@ -137,7 +133,7 @@ Member of Luxoft’s automotive and data analytics division, working with global
 
 ## Education
 
-- **Ph.D. in Applied Mathematics**, 2005  
+- **Ph.D. in Applied Mathematics**, 2005
 - **M.A. in Applied Mathematics**, 1997  
   Dnipropetrovsk National University, Ukraine
 
@@ -145,10 +141,10 @@ Member of Luxoft’s automotive and data analytics division, working with global
 
 ## Downloads
 
-- [Download Founder CV — AI / VoiceOS / GeoAI (PDF)](./Volodymyr_Pasichnyk_AI_Founder_CV.pdf)
+- [Download Research / Exploration CV (PDF)](./Volodymyr_Pasichnyk_AI_Founder_CV.pdf)
 - [Download Principal Engineer CV — FinTech Platforms (PDF)](./Volodymyr_Pasichnyk_Principal_Engineer_CV.pdf)
 
 ---
 
-© 2025 Volodymyr Pasichnyk — AI Founder, VoiceOS & GeoAI · Principal Software Engineer  
-Built with ♥, Vanilla JS and an obsession for human–device interaction.
+© 2025 Volodymyr Pasichnyk — Principal Software Engineer  
+Built with ♥ and Vanilla JS.

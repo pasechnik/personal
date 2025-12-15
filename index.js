@@ -168,11 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initialOption.classList.add('active');
   }
 
-  const printButton = document.querySelector('.print-btn');
-  if (printButton) {
-    printButton.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent event bubbling
-      window.print();
+  const printButtons = document.querySelectorAll('.print-btn');
+  if (printButtons && printButtons.length) {
+    printButtons.forEach((printButton) => {
+      printButton.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event bubbling
+        window.print();
+      });
     });
   }
 });
